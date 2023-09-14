@@ -62,10 +62,6 @@ If you get errors when processing, check the following:
 - The image path exists
 - The dimensions are correct. I used MS Paint to determine the start and the dimensions of the cropped image.
 
-```
-command to run if program contains helper info
-```
-
 ## Authors
 
 [Munene Isaka](https://github.com/muneneisaka)
