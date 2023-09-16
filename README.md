@@ -11,7 +11,7 @@ Crop all those screenshots which to remove some portions such as identifiable in
 ### Dependencies
 
 - You need Node installed in your environment
-- npm packages required: express, sharp and nodemon (for dev auto-restart)
+- npm packages required: express, sharp, morgan-body and nodemon (for dev auto-restart)
 
 ### Installing
 
@@ -29,7 +29,7 @@ npm init -y
 If any dependency is not installed, you can install as below:
 
 ```
-- npm install express sharp
+- npm install express sharp morgan-body
 - npm install --save-dev nodemon
 ```
 
@@ -39,19 +39,26 @@ Start the application using the normal npm commands:
 npm start
 ```
 
-The application will start processing the images and give the output as shown below:
+On the browser, navigate to http://localhost:3031/ and input the parameters as shown below
+![Image Parameters](images/image-parameters.png)
 
-![Processing images](screenshots/image.png)
+Click "Start cropping..." button.
+
+On your browser window, you will get the below output
+![Cropping Complete](images/cropping-complete.png)
+
+On the console, you will get the below output
+![Processing images](images/processed.png)
 
 ## Improvements
 
 The project needs to improve in the following:
 
-- Connect to a front-end (React) for input of the parameters such as path, image cropping dimensions etc.
+- ~~Connect to a front-end (React) for input of the parameters such as path, image cropping dimensions etc. DONE~~
 - Better error handling
 - Organize the project better with folders etc.
 - Additional functionality:
-  - Start and stop the application processing
+  - ~~Start and stop the application processing~~
   - Choose the path
   - Choose whether to delete the original files etc.
 
@@ -69,8 +76,12 @@ If you get errors when processing, check the following:
 ## Version History
 
 - 1.0.0
+
   - Initial release
   - See [commit change]()
+
+- 1.1.0
+  - Added front-end features
 
 ## License
 
