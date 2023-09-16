@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      integrity="undefined"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+      integrity="undefined"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../public/styles.css" />
+    <title>Enter Image Parameters</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-sm-6 mt-5 col-sm-offset-3">
+        <h1><span class="fa fa-sign-in"></span> Image Parameters</h1>
+
+        <form action="/crop" method="post">
+          <div class="form-group">
+            <label>Top</label>
+            <input
+              type="number"
+              inputmode="numeric"
+              class="form-control"
+              name="top"
+              autocomplete="on"
+              required
+            />
+            <label>Left</label>
+            <input
+              type="number"
+              inputmode="numeric"
+              class="form-control"
+              name="left"
+              autocomplete="on"
+              required
+            />
+            <label>Width</label>
+            <input
+              type="number"
+              inputmode="numeric"
+              class="form-control"
+              name="width"
+              autocomplete="on"
+              required
+            />
+            <label>Height</label>
+            <input
+              type="number"
+              inputmode="numeric"
+              class="form-control"
+              name="height"
+              autocomplete="on"
+              required
+            />
+            <label>Base Image Path</label>
+            <input
+              type="text"
+              class="form-control"
+              name="basePath"
+              autocomplete="on"
+              required
+            />
+            <label>Input Path</label>
+            <input
+              type="text"
+              class="form-control"
+              name="inputPath"
+              autocomplete="on"
+              required
+            />
+            <label>Output Path</label>
+            <input
+              type="text"
+              class="form-control"
+              name="croppedPath"
+              autocomplete="on"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-sm btn-primary mt-3 ml-2">
+            Start cropping...
+          </button>
+        </form>
+
+        <hr />
+      </div>
+    </div>
+  </body>
+</html>

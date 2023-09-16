@@ -4,17 +4,16 @@ import sharp from "sharp";
 
 let totalNumFiles = 0;
 
-// ****************change this to the path you want to use as your base path************//
-const basePath = path.join("D:\\node-js-batch-image-cropper");
+let basePath = "";
 
-const inputBasePath = path.join(basePath, "input-images");
-const croppedBasePath = path.join(basePath, "cropped-images");
+let inputBasePath = "";
+let croppedBasePath = "";
 
 //chage the below dimensions
-const top = 120; //how far from the top to begin
-const left = 0; //how far from the left to begin
-const width = 1366; //width of cropped image
-const height = 560; //height of cropped image
+let top = 0; //how far from the top to begin
+let left = 0; //how far from the left to begin
+let width = 0; //width of cropped image
+let height = 0; //height of cropped image
 
 async function getImageMetadata(imagePath) {
   try {
@@ -28,7 +27,6 @@ async function getImageMetadata(imagePath) {
 function cropAnImage(imagePath) {
   const inputImagePath = path.join(inputBasePath, imagePath);
 
-  //uncomment this to display the metadata of the image like size, dimensions etc.
   //getImageMetadata(inputImagePath);
 
   const nameWithoutExt = path.parse(imagePath).name;
@@ -48,37 +46,41 @@ function cropAnImage(imagePath) {
       top: top,
     })
     .toFile(croppedImagePath)
-    .then(() => {
-      //console.log("image cropped successfully: ", croppedImagePath);
-    })
-    .catch((error) => {
-      console.log("An error has occurred: ", error);
-    });
 
-  //console.log(croppedImagePath);
+    .catch((error) => {
+      console.log("Cropping error: ", error);
+    });
 }
 
-function getAllImages() {
+function getAllImages(imageParameters, response) {
+  basePath = path.join(imageParameters.basePath);
+  inputBasePath = path.join(basePath, imageParameters.inputPath);
+  croppedBasePath = path.join(basePath, imageParameters.croppedPath);
+  top = parseInt(imageParameters.top);
+  left = parseInt(imageParameters.left);
+  width = parseInt(imageParameters.width);
+  height = parseInt(imageParameters.height);
+
   console.log("Getting the images from the path:", inputBasePath);
 
   fs.readdir(inputBasePath, (err, files) => {
     if (err) {
-      return console.log("Could not read files in the path due to error:", err);
+      return response
+        .status(400)
+        .json({ info: "Cannot open input path: " + err });
     }
 
     totalNumFiles = files.length;
     let fileNum = 1;
-    //get all the files using for each
-    files.forEach((fileName) => {
-      //console.log(fileName);
 
-      console.log("Processing", fileNum, "out of", totalNumFiles, "images");
+    files.forEach((fileName) => {
+      console.log("Cropping", fileNum, "out of", totalNumFiles, "images");
 
       cropAnImage(fileName);
       fileNum++;
     });
 
-    console.log("Cropping of images completed.");
+    response.status(400).json({ info: "Cropping of images completed." });
   });
 }
 
