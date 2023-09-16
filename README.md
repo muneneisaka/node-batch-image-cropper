@@ -39,15 +39,16 @@ Start the application using the normal npm commands:
 npm start
 ```
 
-On the browser, navigate to http://localhost:3031/ and input the parameters as shown below
+On the browser, navigate to http://localhost:3031/ and input the parameters as shown below and click "Start cropping..." button.
+
 ![Image Parameters](images/image-parameters.png)
 
-Click "Start cropping..." button.
+On your browser window, you will get the below output:
 
-On your browser window, you will get the below output
 ![Cropping Complete](images/cropping-complete.png)
 
-On the console, you will get the below output
+On the console, you will get the below output:
+
 ![Processing images](images/processed.png)
 
 ## Improvements
