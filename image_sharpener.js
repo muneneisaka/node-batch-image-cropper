@@ -77,16 +77,19 @@ function getAllImages(imageParameters, response) {
     }
 
     totalNumFiles = files.length;
-    let fileNum = 1;
 
-    files.forEach((fileName) => {
-      console.log("Cropping", fileNum, "out of", totalNumFiles, "images");
+    if (totalNumFiles > 0) {
+      let fileNum = 1;
 
-      cropAnImage(fileName);
-      fileNum++;
-    });
+      files.forEach((fileName) => {
+        console.log("Cropping", fileNum, "out of", totalNumFiles, "images");
 
-    response.status(400).json({ info: "Cropping of images completed." });
+        cropAnImage(fileName);
+        fileNum++;
+      });
+
+      response.status(200).json({ info: "Cropping of images completed." });
+    } else response.status(400).json({ info: "No images to crop." });
   });
 }
 
