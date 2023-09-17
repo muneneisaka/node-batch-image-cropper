@@ -56,8 +56,8 @@ On the console, you will get the below output:
 The project needs to improve in the following:
 
 - ~~Connect to a front-end (React) for input of the parameters such as path, image cropping dimensions etc. DONE~~
-- Better error handling
-- Organize the project better with folders etc.
+- ~~Better error handling~~
+- ~~Organize the project better with folders etc.~~
 - Additional functionality:
   - ~~Start and stop the application processing~~
   - Choose the path
