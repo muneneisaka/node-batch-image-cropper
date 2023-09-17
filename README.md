@@ -58,9 +58,9 @@ The project needs to improve in the following:
 - ~~Connect to a front-end (React) for input of the parameters such as path, image cropping dimensions etc. DONE~~
 - ~~Better error handling~~
 - ~~Organize the project better with folders etc.~~
-- Additional functionality:
+- ~~Additional functionality:~~
   - ~~Start and stop the application processing~~
-  - Choose the path
+  - ~~Choose the path. Directory picker browser support is scanty for now. Implement later.~~
   - ~~Choose whether to delete the original files etc.~~
 
 ## Help
