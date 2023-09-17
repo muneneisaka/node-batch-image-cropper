@@ -14,6 +14,7 @@ let top = 0; //how far from the top to begin
 let left = 0; //how far from the left to begin
 let width = 0; //width of cropped image
 let height = 0; //height of cropped image
+let deleteFiles = "";
 
 async function getImageMetadata(imagePath) {
   try {
@@ -46,7 +47,11 @@ function cropAnImage(imagePath) {
       top: top,
     })
     .toFile(croppedImagePath)
-
+    .then(() => {
+      if (deleteFiles === "on") {
+        fs.unlinkSync(inputImagePath);
+      }
+    })
     .catch((error) => {
       console.log("Cropping error: ", error);
     });
@@ -60,6 +65,7 @@ function getAllImages(imageParameters, response) {
   left = parseInt(imageParameters.left);
   width = parseInt(imageParameters.width);
   height = parseInt(imageParameters.height);
+  deleteFiles = imageParameters.deleteFiles;
 
   console.log("Getting the images from the path:", inputBasePath);
 

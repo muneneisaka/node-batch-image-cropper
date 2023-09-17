@@ -61,7 +61,7 @@ The project needs to improve in the following:
 - Additional functionality:
   - ~~Start and stop the application processing~~
   - Choose the path
-  - Choose whether to delete the original files etc.
+  - ~~Choose whether to delete the original files etc.~~
 
 ## Help
 

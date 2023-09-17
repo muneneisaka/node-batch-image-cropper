@@ -28,7 +28,6 @@
               inputmode="numeric"
               class="form-control"
               name="top"
-              autocomplete="on"
               required
             />
             <label>Left</label>
@@ -37,7 +36,6 @@
               inputmode="numeric"
               class="form-control"
               name="left"
-              autocomplete="on"
               required
             />
             <label>Width</label>
@@ -46,7 +44,6 @@
               inputmode="numeric"
               class="form-control"
               name="width"
-              autocomplete="on"
               required
             />
             <label>Height</label>
@@ -55,33 +52,21 @@
               inputmode="numeric"
               class="form-control"
               name="height"
-              autocomplete="on"
               required
             />
             <label>Base Image Path</label>
-            <input
-              type="text"
-              class="form-control"
-              name="basePath"
-              autocomplete="on"
-              required
-            />
+            <input type="text" class="form-control" name="basePath" required />
             <label>Input Path</label>
-            <input
-              type="text"
-              class="form-control"
-              name="inputPath"
-              autocomplete="on"
-              required
-            />
+            <input type="text" class="form-control" name="inputPath" required />
             <label>Output Path</label>
             <input
               type="text"
               class="form-control"
               name="croppedPath"
-              autocomplete="on"
               required
             />
+            <label>Delete input files after cropping?</label>
+            <input type="checkbox" name="deleteFiles" data-toggle="toggle" />
           </div>
 
           <button type="submit" class="btn btn-sm btn-primary mt-3 ml-2">
