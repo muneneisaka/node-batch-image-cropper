@@ -15,8 +15,18 @@ Crop all those screenshots which to remove some portions such as identifiable in
 
 ### Installing
 
-- Just clone the repo or download from this repo
+- Clone the repo or download from this repo.
 - Copy to a directory in your computer.
+
+#### Installing as a Windows Service
+
+Thanks to the great package [node-windows](https://github.com/coreybutler/node-windows), we can run this as a Windows Service that is installed on services.msc and can behave like a normal windows service.
+
+Run the command `node install.js` to install and `node uninstall.js` to uninstall the service. It will appear as below once installed.
+
+![Batch Image Cropper Windows Service](./images/windows-service.png)
+
+Follow the Github link for more info about [node-windows](https://github.com/coreybutler/node-windows).
 
 ### Executing program
 
@@ -82,7 +92,11 @@ If you get errors when processing, check the following:
   - See [commit change]()
 
 - 1.1.0
+
   - Added front-end features
+
+- 1.2.0
+  - Added Windows Service Feature
 
 ## License
 
@@ -97,3 +111,4 @@ Inspiration, code snippets, etc.
 - [express](https://www.npmjs.com/package/express)
 - [sharp](https://www.npmjs.com/package/sharp)
 - [nodemon](https://www.npmjs.com/package/nodemon)
+- [node-windows](https://github.com/coreybutler/node-windows)
